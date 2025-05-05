@@ -1,0 +1,17 @@
+ <root main_tree_to_execute = "MainTree" BTCPP_format="4">
+     <BehaviorTree ID="MainTree">
+        <Fallback name="fallback">
+            <Sequence name="check_risk_level">
+                <CheckRisk name="risk < 20"/>
+            </Sequence>
+            <Sequence name="root_sequence">
+                <CheckRiskWarning name="risk >= 20"/>
+                <slow_driving name="slow_driving"/>    
+                <RobotTask1   name="task1"/>
+                <RobotTask2   name="task2"/>
+                <RobotTask3   name="task3"/>
+            </Sequence>
+        </Fallback>
+     </BehaviorTree>
+ 
+ </root>
